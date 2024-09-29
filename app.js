@@ -16,7 +16,7 @@ dotenv.config()
 
 app.use(
   cors({
-    origin: ["*", "http://localhost:5173", "https://pinvent-app.vercel.app"], // Permitir solicitações de qualquer origem (em desenvolvimento)
+    origin: ["*", "http://localhost:5173", "https://cfp-client.vercel.app"], // Permitir solicitações de qualquer origem (em desenvolvimento)
     methods: "GET, POST, PUT, DELETE",
     allowedHeaders:
       "Origin, X-Requested-With, Content-Type, Accept, Authorization",

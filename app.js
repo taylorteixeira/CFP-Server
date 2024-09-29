@@ -9,13 +9,14 @@ import transactionRoutes from "./Routes/transaction.route.js"
 import { errorMiddleware } from "./Middlewares/error.js"
 import path from "path"
 import { fileURLToPath } from "url"
+import chatRoutes from "./Routes/chat.routes.js"
 
 const app = express()
 dotenv.config()
 
 app.use(
   cors({
-    origin: ["*", "http://localhost:5173", "https://cfp-client.vercel.app"], // Permitir solicitações de qualquer origem (em desenvolvimento)
+    origin: ["*", "http://localhost:5173", "https://pinvent-app.vercel.app"], // Permitir solicitações de qualquer origem (em desenvolvimento)
     methods: "GET, POST, PUT, DELETE",
     allowedHeaders:
       "Origin, X-Requested-With, Content-Type, Accept, Authorization",
@@ -34,7 +35,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")))
 app.use("/user", userRoutes)
 app.use("/category", categoryRoutes)
 app.use("/transaction", transactionRoutes)
-
+app.use("/chat", chatRoutes)
 
 mongoose
   .connect(process.env.MONGO_URI, {

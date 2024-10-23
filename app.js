@@ -10,6 +10,7 @@ import { errorMiddleware } from "./Middlewares/error.js"
 import path from "path"
 import { fileURLToPath } from "url"
 import chatRoutes from "./Routes/chat.routes.js"
+import goalLimiRoutes from "./Routes/goalLimit.routes.js"
 
 const app = express()
 dotenv.config()
@@ -36,6 +37,7 @@ app.use("/user", userRoutes)
 app.use("/category", categoryRoutes)
 app.use("/transaction", transactionRoutes)
 app.use("/chat", chatRoutes)
+app.use("/meta", goalLimiRoutes)
 
 mongoose
   .connect(process.env.MONGO_URI, {

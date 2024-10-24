@@ -6,6 +6,7 @@ import {
   deleteTransaction,
   getTransactions,
   getRecentTransactions,
+  importTransactions,
 } from "../Controllers/transaction.controller.js"
 import upload from "../Middlewares/upload.js"
 
@@ -26,5 +27,6 @@ router.put(
   editTransaction
 )
 router.delete("/deleteTransaction/:id", isAuthenticated, deleteTransaction)
+router.post("/import", isAuthenticated, importTransactions) // Nova rota para importar transações
 
 export default router
